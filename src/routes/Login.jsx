@@ -3,7 +3,6 @@ import { UserContext } from "../components/UserContextProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { User } from "../utils/validation";
 import { z } from "zod";
-import uuid from "react-uuid";
 import API from "../utils/API";
 
 export default function Login() {
@@ -41,7 +40,7 @@ export default function Login() {
           noUser: {
             _errors: ["User not found. Incorrect email or password"],
           },
-        })
+        }),
       );
   }
 

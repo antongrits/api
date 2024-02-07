@@ -1,5 +1,5 @@
 export default class API {
-  static #url = "http://localhost:5001";
+  static #url = "https://wmhy7g-5001.csb.app";
 
   static #catchError(r, dataName) {
     if (r.status === 404) {
@@ -23,7 +23,7 @@ export default class API {
 
   static #requestData(endpoint, dataName) {
     return fetch(`${this.#url}${endpoint}`).then((r) =>
-      this.#catchError(r, dataName)
+      this.#catchError(r, dataName),
     );
   }
 
@@ -46,7 +46,7 @@ export default class API {
   static getUserByParams(params) {
     return this.#requestData(
       `/users?${new URLSearchParams(params).toString()}`,
-      "user"
+      "user",
     )
       .then((data) => {
         if (data.length === 0) {

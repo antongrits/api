@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../components/UserContextProvider";
 import { z } from "zod";
-import uuid from "react-uuid";
 import { Note } from "../utils/validation";
 import API from "../utils/API";
 import NoteForm from "../components/NoteForm";

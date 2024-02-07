@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
 import { User } from "../utils/validation";
-import uuid from "react-uuid";
 import { Link, useNavigate } from "react-router-dom";
 import API from "../utils/API";
 
@@ -38,7 +37,7 @@ export default function SignUp() {
 
     API.getUserByParams({ email })
       .then(() =>
-        setErrors({ _errors: ["A user with this email already exists"] })
+        setErrors({ _errors: ["A user with this email already exists"] }),
       )
       .catch(() => {
         setErrors(null);
